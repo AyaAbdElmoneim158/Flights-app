@@ -1,8 +1,11 @@
+import 'package:app/core/utils/routing/router.dart';
+import 'package:app/core/utils/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'core/utils/constants/strings.dart';
+import 'core/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,13 +19,10 @@ class App extends StatelessWidget {
       builder: (_, __) => GetMaterialApp(
         title: AppStrings.appTitle,
         themeMode: ThemeMode.light,
+        theme: AppAppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(AppStrings.appTitle),
-          ),
-          body: Center(child: Text(AppStrings.appTitle)),
-        ),
+        initialRoute: Routes.onboarding,
+        onGenerateRoute:   AppRouter.onGenerate,
       ),
     );
   }
