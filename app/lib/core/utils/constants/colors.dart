@@ -9,6 +9,8 @@ abstract class AppColors {
 
   static const Color secondary = Color(0xff82898F);
   static const Color accent = Color(0xff1E252D);
+  static const Color bottomNavigationShadow = Color(0xff475159);
+
 
   //Primary Colors - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   static const Color gray25 = Color(0xffFFFFFF);

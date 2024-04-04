@@ -7,6 +7,8 @@ class AppBottomSheetTheme {
       showDragHandle: true,
       backgroundColor: Colors.white,
       modalBackgroundColor: Colors.white,
+      
+      elevation: 0,
       constraints: const BoxConstraints(minWidth: double.infinity),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(16)));
 

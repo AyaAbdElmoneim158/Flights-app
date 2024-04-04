@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../core/reusable_widgets/app_button.dart';
 import '../../../../core/utils/constants/colors.dart';
 import '../../../../core/utils/constants/sizes.dart';
 import '../../../../core/utils/constants/spacing.dart';
 import '../../../../core/utils/constants/strings.dart';
 import '../../../../core/utils/constants/styles.dart';
+import '../../../../navigation_menu.dart';
 import '../onboarding_model.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -55,7 +57,7 @@ class OnboardingPage extends StatelessWidget {
               child: AppTextButton(
                 buttonText: AppStrings.getStarted,
                 textStyle: AppStyles.font16BlueMedium,
-                onPressed: () {},
+                onPressed: () => Get.off(() => const NavigationMenu()),
                 buttonWidth: double.infinity,
                 backgroundColor: AppColors.white,
               ),

@@ -42,4 +42,15 @@ abstract class AppStyles {
     fontWeight: AppFontWeightHelper.medium,
     color: AppColors.gray800,
   );
+
+  static Decoration? bottomNavigationDecoration = const BoxDecoration(
+    boxShadow: [
+      BoxShadow(
+        color: AppColors.bottomNavigationShadow,
+        spreadRadius: 0,
+        blurRadius: 20 / 3,
+        offset: Offset(0, 3),
+      ),
+    ],
+  );
 }
