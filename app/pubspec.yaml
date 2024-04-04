@@ -35,6 +35,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/splash/
+    - assets/images/onboarding/
+
 
   # Fonts - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   fonts:

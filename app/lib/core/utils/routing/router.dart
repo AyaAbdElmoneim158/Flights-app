@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../../features/screens/onboarding/onboarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -18,7 +19,7 @@ class AppRouter {
       case Routes.onboarding:
         return pageTransition(
           settings,
-          const Placeholder(),
+          const OnboardingScreen(),
         );
       case Routes.noFoundRoute:
       default:
