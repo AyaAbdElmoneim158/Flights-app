@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'core/utils/constants/strings.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -12,14 +14,14 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, __) => GetMaterialApp(
-        title: "Flights App",
-        themeMode: ThemeMode.system,
+        title: AppStrings.appTitle,
+        themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Flights App"),
+            title: Text(AppStrings.appTitle),
           ),
-          body: const Center(child: Text("Flights App")),
+          body: Center(child: Text(AppStrings.appTitle)),
         ),
       ),
     );
