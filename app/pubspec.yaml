@@ -1,30 +1,35 @@
 name: app
 description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: ">=3.2.6 <4.0.0"
 
 # Packages - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  flutter_native_splash: ^2.3.9
+  flutter_screenutil: ^5.9.0
+  get: ^4.6.6
+  get_storage: ^2.1.1
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
 
-# Assets - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # Assets - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   assets:
     - assets/images/
-    
-# Fonts - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    - assets/images/splash/
+
+  # Fonts - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   fonts:
     - family: Inter
       fonts:
@@ -43,4 +48,4 @@ flutter:
         - asset: assets/fonts/Inter-ExtraBold.ttf
           weight: 800
         - asset: assets/fonts/Inter-Black.ttf
-          weight: 900        
+          weight: 900
