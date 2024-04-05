@@ -1,7 +1,6 @@
+import 'package:app/features/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-
-import '../../../features/screens/onboarding/onboarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {

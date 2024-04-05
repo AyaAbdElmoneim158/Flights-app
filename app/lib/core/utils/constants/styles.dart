@@ -43,6 +43,18 @@ abstract class AppStyles {
     color: AppColors.gray800,
   );
 
+  static TextStyle font20Gray800Bold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: AppFontWeightHelper.bold,
+    color: AppColors.gray800,
+  );
+
+  static TextStyle font10Gray25SemiBold = TextStyle(
+    fontSize: 10.sp,
+    fontWeight: AppFontWeightHelper.semiBold,
+    color: AppColors.gray25,
+  );
+
   static Decoration? bottomNavigationDecoration = const BoxDecoration(
     boxShadow: [
       BoxShadow(
@@ -50,6 +62,39 @@ abstract class AppStyles {
         spreadRadius: 0,
         blurRadius: 20 / 3,
         offset: Offset(0, 3),
+      ),
+    ],
+  );
+
+  static Decoration? containerBottomCircularDecoration = const BoxDecoration(
+    color: AppColors.white,
+    borderRadius: BorderRadius.only(
+      bottomLeft: Radius.circular(20),
+      bottomRight: Radius.circular(20),
+    ),
+  );
+
+  static Decoration? containerTopCircularDecoration = const BoxDecoration(
+    color: AppColors.white,
+    borderRadius: BorderRadius.only(
+      topLeft: Radius.circular(20),
+      topRight: Radius.circular(20),
+    ),
+  );
+
+  static Decoration? textFieldShadow = BoxDecoration(
+    boxShadow: [
+      BoxShadow(
+        color: const Color(0xff101828).withOpacity(0.10),
+        spreadRadius: -4,
+        blurRadius: 16,
+        offset: const Offset(0, 12),
+      ),
+      BoxShadow(
+        color: const Color(0xff101828).withOpacity(0.05),
+        spreadRadius: -2,
+        blurRadius: 6,
+        offset: const Offset(0, 4),
       ),
     ],
   );

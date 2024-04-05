@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../features/screens/home/home_screen.dart';
 import 'images.dart';
 import 'strings.dart';
 
@@ -32,7 +33,7 @@ class AppConstants {
       ];
 
   static List<Widget> screens = const [
-    Center(child: Text("1")),
+    HomeScreen(),
     Center(child: Text("2")),
     Center(child: Text("3")),
     Center(child: Text("4")),

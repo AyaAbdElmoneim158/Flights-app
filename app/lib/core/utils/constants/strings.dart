@@ -22,4 +22,13 @@ abstract class AppStrings {
   static String airplane = "Fights";
   static String lovely = "Favorites";
   static String profile = "Profile";
+
+  ///* Home - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  static String extreme = 'Extreme\n';
+  static String airplaneFlight = 'airplane flight';
+  static String whereToFind = "Where to find an airplane tour?";
+  static String sundayJuly30 = "Sunday, July 30";
+  static String passengers = "Passengers";
+  static String findTour = "Find tour";
+  static String helpfulInformation = "Helpful information";
 }
