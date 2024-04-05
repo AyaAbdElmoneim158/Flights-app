@@ -1,47 +1,31 @@
-import 'package:app/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/reusable_widgets/heading_text.dart';
+import '../../../../core/utils/constants/sizes.dart';
+import '../../../../core/utils/constants/strings.dart';
 import '../../../../core/utils/constants/styles.dart';
-import '../helper_card_model.dart';
+import 'helper_info_list_view.dart';
 
 class HelperInfoSection extends StatelessWidget {
   const HelperInfoSection({
     super.key,
-    required this.card,
   });
-
-  final HelperCardModel card;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(2),
-      width: 110,
-      height: 135,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: AppColors.primary,
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(AppSizes.defaultPadding),
+        decoration: AppStyles.containerTopCircularDecoration,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            HeadingText(text: AppStrings.helpfulInformation),
+            const HelperInfoListView()
+          ],
         ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Image.asset(
-              card.image,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Text(
-              card.text,
-              style: AppStyles.font10Gray25SemiBold,
-            ),
-          ),
-        ],
       ),
     );
   }
