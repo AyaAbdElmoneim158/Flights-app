@@ -36,4 +36,12 @@ abstract class AppStrings {
   ///* Search-Result - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   static String popular = "Popular";
   static String airTours = "Air tours";
+
+  ///* Air-Tour-Details - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  static String pilotInformation = "Pilot information";
+  static String customerReviews = "Customer reviews";
+  static String flightDuration = "Flight duration";
+  static String startOfFlight = "Start of flight";
+  static String flightRoute = "Flight route";
+  static String type = "Параметры тура";
 }
