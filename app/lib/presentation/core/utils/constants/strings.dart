@@ -32,4 +32,8 @@ abstract class AppStrings {
   static String findTour = "Find tour";
   static String helpfulInformation = "Helpful information";
   static String myLocation = "My location";
+
+  ///* Search-Result - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  static String popular = "Popular";
+  static String airTours = "Air tours";
 }
