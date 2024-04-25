@@ -23,10 +23,14 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onboarding,
         onGenerateRoute: AppRouter.onGenerate,
+        // home:
+        //     /*Scaffold(
+        //     appBar: AppBar(
+        //       title: const Text("Appbar"),
+        //     ),
+        //   )*/
+        //     const ProfileScreen(),
       ),
     );
   }
 }
-/*
-
- */

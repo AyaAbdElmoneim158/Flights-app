@@ -17,7 +17,6 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       body: LiquidSwipe(
         pages: pages,
-        // enableSlideIcon: true,
         positionSlideIcon: 0.2,
         slideIconWidget: Icon(
           Icons.arrow_back_ios,

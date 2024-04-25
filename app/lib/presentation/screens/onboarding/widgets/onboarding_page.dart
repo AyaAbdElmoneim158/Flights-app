@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/reusable_widgets/app_button.dart';
@@ -23,9 +24,12 @@ class OnboardingPage extends StatelessWidget {
         children: [
           const SizedBox(),
           Column(children: [
-            Image.asset(
-              model.image,
-              width: AppSizes.imageOnboardingSize,
+            ZoomIn(
+              duration: const Duration(milliseconds: 500),
+              child: Image.asset(
+                model.image,
+                width: AppSizes.imageOnboardingSize,
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -34,32 +38,41 @@ class OnboardingPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    model.title,
-                    style: AppStyles.font24WhiteSemiBold,
+                  FadeInLeftBig(
+                    duration: const Duration(milliseconds: 700),
+                    child: Text(
+                      model.title,
+                      style: AppStyles.font24WhiteSemiBold,
+                    ),
                   ),
                   verticalSpace(AppSizes.defaultSpace / 2),
-                  Text(
-                    model.desc,
-                    style: AppStyles.font16WhiteRegular,
+                  FadeInLeftBig(
+                    duration: const Duration(milliseconds: 900),
+                    child: Text(
+                      model.desc,
+                      style: AppStyles.font16WhiteRegular,
+                    ),
                   ),
                   verticalSpace(AppSizes.defaultSpace * 2),
                 ],
               ),
             ),
           ]),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSizes.defaultPadding,
-            ),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: AppTextButton(
-                buttonText: AppStrings.getStarted,
-                textStyle: AppStyles.font16BlueMedium,
-                onPressed: () => Get.off(() => const NavigationMenu()),
-                buttonWidth: double.infinity,
-                backgroundColor: AppColors.white,
+          ZoomIn(
+            duration: const Duration(milliseconds: 1100),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSizes.defaultPadding,
+              ),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: AppTextButton(
+                  buttonText: AppStrings.getStarted,
+                  textStyle: AppStyles.font16BlueMedium,
+                  onPressed: () => Get.off(() => const NavigationMenu()),
+                  buttonWidth: double.infinity,
+                  backgroundColor: AppColors.white,
+                ),
               ),
             ),
           ),
