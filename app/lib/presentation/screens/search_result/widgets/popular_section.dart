@@ -6,6 +6,7 @@ import '../../../core/utils/constants/strings.dart';
 import '../../../core/utils/constants/styles.dart';
 import 'filtration_text_field.dart';
 import 'list_view_popular_card.dart';
+import 'package:animate_do/animate_do.dart';
 
 class PopularSection extends StatelessWidget {
   const PopularSection({
@@ -22,9 +23,15 @@ class PopularSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(AppSizes.defaultPadding / 2),
-          const FiltrationTextField(),
+          ZoomIn(
+            duration: const Duration(milliseconds: 500),
+            child: const FiltrationTextField(),
+          ),
           verticalSpace(AppSizes.spaceBtwItems),
-          HeadingText(text: AppStrings.popular),
+          FadeInLeftBig(
+            duration: const Duration(milliseconds: 750),
+            child: HeadingText(text: AppStrings.popular),
+          ),
           const ListViewPopularCard(),
         ],
       ),

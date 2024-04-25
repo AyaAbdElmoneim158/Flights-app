@@ -1,7 +1,10 @@
+import 'package:app/presentation/screens/favorites/favorites_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../screens/flights/flights_screen.dart';
 import '../../../screens/home/home_screen.dart';
+import '../../../screens/profile/profile_screen.dart';
 import 'images.dart';
 import 'strings.dart';
 
@@ -34,9 +37,9 @@ class AppConstants {
 
   static List<Widget> screens = const [
     HomeScreen(),
-    Center(child: Text("2")),
-    Center(child: Text("3")),
-    Center(child: Text("4")),
+    FlightsScreen(),
+    FavoritesScreen(),
+    ProfileScreen(),
   ];
 
   static List<String> durations = [
@@ -49,11 +52,11 @@ class AppConstants {
   ];
 
   static List<String> startFlight = [
-    "7.00",
-    "9.00",
-    "11.00",
-    "13.00",
-    "15.00",
-    "17.00",
+    "7:00",
+    "9:00",
+    "11:00",
+    "13:00",
+    "15:00",
+    "17:00",
   ];
 }

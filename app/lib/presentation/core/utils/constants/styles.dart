@@ -85,6 +85,54 @@ abstract class AppStyles {
     color: AppColors.darkGray,
   );
 
+  static TextStyle font21AccentBold = TextStyle(
+    fontSize: 21.sp,
+    fontWeight: AppFontWeightHelper.bold,
+    color: AppColors.accent,
+  );
+
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColors.white,
+  );
+
+  static TextStyle font12DarkGrayRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.darkGray,
+  );
+
+  static TextStyle font16Gray800Regular = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.gray800,
+  );
+
+  static TextStyle font14Gray400Regular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.gray400,
+  );
+
+  static TextStyle font24Gray800SemiBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: AppFontWeightHelper.semiBold,
+    color: AppColors.gray800,
+  );
+
+  static TextStyle font14Gray500Medium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColors.gray500,
+  );
+
+  static TextStyle font14Gray800Regular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.gray800,
+  );
+
   static Decoration? bottomNavigationDecoration = const BoxDecoration(
     boxShadow: [
       BoxShadow(

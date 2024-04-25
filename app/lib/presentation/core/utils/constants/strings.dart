@@ -44,4 +44,7 @@ abstract class AppStrings {
   static String startOfFlight = "Start of flight";
   static String flightRoute = "Flight route";
   static String type = "Параметры тура";
+
+  ///* Favorites - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  static String favorites = "Favorites";
 }

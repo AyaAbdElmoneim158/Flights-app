@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/helper/helper_functions.dart';
 import 'package:app/presentation/core/helper/validator_helper.dart';
 import 'package:app/presentation/core/utils/constants/spacing.dart';
@@ -5,15 +6,11 @@ import 'package:app/presentation/core/utils/constants/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
-import '../../../core/reusable_widgets/app_button.dart';
 import '../../../core/reusable_widgets/app_text_field.dart';
-import '../../../core/utils/constants/colors.dart';
 import '../../../core/utils/constants/images.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/strings.dart';
 import 'date_picker_bottom_sheet.dart';
-// ToDo:(handel) import 'package:search_field_autocomplete/search_field_autocomplete.dart';
 
 void openSearchBottomSheet() {
   Get.bottomSheet(
@@ -28,11 +25,47 @@ void openSearchBottomSheet() {
             topRight: Radius.circular(10),
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              AppTextFormField(
+        child: const SearchedBox(),
+      ),
+    ),
+    backgroundColor: Colors.white,
+    elevation: 0,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  );
+}
+
+class SearchedBox extends StatefulWidget {
+  const SearchedBox({
+    super.key,
+  });
+
+  @override
+  State<SearchedBox> createState() => _SearchedBoxState();
+}
+
+class _SearchedBoxState extends State<SearchedBox> {
+  // String _locationText = 'Tap here to search a place';
+  List<String> cities = [
+    "Cairo",
+    "Alexandria",
+    "San Francisco",
+    " Berkeley",
+    "Saint-Petersburg"
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ///* Search - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            ZoomIn(
+              duration: const Duration(milliseconds: 500),
+              child: AppTextFormField(
                 hintText: AppStrings.whereToFind,
                 contentPadding: EdgeInsets.all(20.w),
                 prefixIcon: Padding(
@@ -44,70 +77,104 @@ void openSearchBottomSheet() {
                 ),
                 validator: (val) =>
                     AppValidator.validateEmptyText("Search", val),
-              ),
-              verticalSpace(AppSizes.defaultPadding),
-              Row(children: [
-                Padding(
-                  padding: const EdgeInsets.all(0),
-                  child: Image.asset(
-                    AppImages.gps,
-                    height: AppSizes.iconLg,
-                  ),
-                ),
-                horizontalSpace(AppSizes.sm),
-                Text(
-                  AppStrings.myLocation,
-                  style: AppStyles.font14AccentMedium,
-                ),
-                /* SizedBox(
-                      height: 300,
-                      child: SearchFieldAutoComplete<String>(
-                        suggestions: [
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Apple', value: 'apple'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Banana', value: 'banana'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Cherry', value: 'cherry'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Date', value: 'date'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Fig', value: 'fig'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Grapes', value: 'grapes'),
-                          SearchFieldAutoCompleteItem<String>(
-                              searchKey: 'Kiwi', value: 'kiwi'),
-                        ],
-                        onSuggestionSelected: (value) {
-                          // Handle the selected suggestion
-                          print('Selected: $value');
-                        },
-                      ),
-                    ),*/
-              ]),
-              verticalSpace(AppSizes.defaultPadding),
-              AppTextButton(
-                buttonText: "Next",
-                textStyle: AppStyles.font16BlueMedium.copyWith(
-                  color: AppColors.white,
-                ),
-                onPressed: () {
-                  Get.back();
-                  debugPrint("OnTap: AppTextButton!");
+                onChanged: (val) async {
+                  ///ToDo: filter
+                  setState(() {
+                    cities.clear();
+                  });
+                },
+                onTap: () {
+                  ///ToDo: Nav to Select date
+                  Navigator.pop(context);
                   openDatePickerBottomSheet();
                 },
-                buttonWidth: double.infinity,
-                backgroundColor: AppColors.primary,
               ),
-            ],
-          ),
+            ),
+            verticalSpace(AppSizes.defaultPadding),
+
+            ///* MyLocation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            Row(children: [
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child: Image.asset(
+                  AppImages.gps,
+                  height: AppSizes.iconLg,
+                ),
+              ),
+              horizontalSpace(AppSizes.sm),
+              Text(
+                AppStrings.myLocation,
+                style: AppStyles.font14AccentMedium,
+              ),
+            ]),
+            // verticalSpace(AppSizes.spaceBtwItems / 2),
+            // const Divider(),
+            verticalSpace(AppSizes.spaceBtwSections),
+
+            ///* Location-list - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) =>
+                  CityLocation(cityName: cities[index]),
+              separatorBuilder: (context, index) =>
+                  verticalSpace(AppSizes.spaceBtwSections),
+              itemCount: cities.length,
+            ),
+
+            ///* Next - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            /*AppTextButton(
+              buttonText: "Next",
+              textStyle: AppStyles.font16BlueMedium.copyWith(
+                color: AppColors.white,
+              ),
+              onPressed: () {
+                Get.back();
+                debugPrint("OnTap: AppTextButton!");
+                openDatePickerBottomSheet();
+              },
+              buttonWidth: double.infinity,
+              backgroundColor: AppColors.primary,
+            ),*/
+          ],
         ),
       ),
-    ),
-    backgroundColor: Colors.white,
-    elevation: 0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-  );
+    );
+  }
 }
+
+class CityLocation extends StatelessWidget {
+  const CityLocation({
+    super.key,
+    required this.cityName,
+  });
+  final String cityName;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pop(context);
+        openDatePickerBottomSheet();
+      },
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            AppImages.mapPin,
+            height: AppSizes.iconMd,
+          ),
+          horizontalSpace(AppSizes.sm),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(cityName, style: AppStyles.font16Gray800Regular),
+              Text("Russia", style: AppStyles.font14Gray400Regular),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+//! https://stackoverflow.com/questions/75865463/flutter-how-to-create-a-search-bar-using-a-text-field-widget

@@ -1,5 +1,4 @@
 import 'package:app/presentation/core/helper/helper_functions.dart';
-import 'package:app/presentation/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:syncfusion_flutter_datepicker/datepicker.dart';
@@ -28,10 +27,10 @@ void openDatePickerBottomSheet() {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  const Text("Date"),
+                  const Text("Date!!!!!!!!!!!!!"),
                   verticalSpace(AppSizes.defaultPadding),
                   AppTextButton(
-                    buttonText: AppStrings.findTour,
+                    buttonText: "Apply",
                     textStyle: AppStyles.font16BlueMedium.copyWith(
                       color: AppColors.white,
                     ),
@@ -39,17 +38,15 @@ void openDatePickerBottomSheet() {
                     buttonWidth: double.infinity,
                     backgroundColor: AppColors.primary,
                   ),
+                  // SfDateRangePicker(
+                  //   enableMultiView: true,
+                  //   viewSpacing: 20,
+                  //   headerStyle: const DateRangePickerHeaderStyle(
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // ),
                 ],
-              )
-              // SfDateRangePicker(
-              //   enableMultiView: true,
-              //   viewSpacing: 20,
-              //   headerStyle: const DateRangePickerHeaderStyle(
-              //     textAlign: TextAlign.center,
-              //   ),
-              // ),
-
-              ),
+              )),
         ),
       ),
     ),

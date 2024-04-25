@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants/spacing.dart';
@@ -17,9 +18,19 @@ class HelperInfoListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
-        itemBuilder: (context, index) => HelperInfoImageCard(
-          card: HelperCardModel.helperCards[index],
-        ),
+        itemBuilder: (context, index) => index.isEven
+            ? FadeInUpBig(
+                duration: const Duration(milliseconds: 1700),
+                child: HelperInfoImageCard(
+                  card: HelperCardModel.helperCards[index],
+                ),
+              )
+            : FadeInDownBig(
+                duration: const Duration(milliseconds: 1700),
+                child: HelperInfoImageCard(
+                  card: HelperCardModel.helperCards[index],
+                ),
+              ),
         separatorBuilder: (_, __) => horizontalSpace(8),
         itemCount: HelperCardModel.helperCards.length,
       ),

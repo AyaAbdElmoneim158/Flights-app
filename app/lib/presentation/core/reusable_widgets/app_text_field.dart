@@ -23,6 +23,7 @@ class AppTextFormField extends StatelessWidget {
   final bool readOnly;
   final void Function()? onTap;
   final BorderRadius borderRadius;
+final void Function(String)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -44,6 +45,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.borderRadius = const BorderRadius.all(Radius.circular(8.0)),
+    this.onChanged,
   });
 
   @override
@@ -111,6 +113,9 @@ class AppTextFormField extends StatelessWidget {
       validator: (value) {
         return validator(value);
       },
+      onChanged:(value) {
+        onChanged;
+      }, 
     );
   }
 }

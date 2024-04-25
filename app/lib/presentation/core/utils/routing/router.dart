@@ -1,6 +1,8 @@
+import 'package:app/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../../screens/search_result/search_result_screen.dart';
+import '../../../screens/favorites/favorites_screen.dart';
+// import '../../../screens/search_result/search_result_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -18,7 +20,12 @@ class AppRouter {
       case Routes.testPage:
         return pageTransition(
           settings,
-          const SearchResultScreen(),
+          const FavoritesScreen(),
+        );
+      case Routes.onboarding:
+        return pageTransition(
+          settings,
+          const OnboardingScreen(),
         );
       case Routes.noFoundRoute:
       default:

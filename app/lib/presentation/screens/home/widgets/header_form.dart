@@ -1,7 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
+import '../../../core/utils/constants/strings.dart';
 import '../../../core/utils/constants/styles.dart';
 import 'extreme_airplane_flight_text.dart';
 import 'home_form.dart';
@@ -23,7 +24,12 @@ class HeaderForm extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(topPadding),
-          buildExtremeAirplaneFlightText(),
+          ZoomIn(
+              duration: const Duration(milliseconds: 500),
+              child: buildHeadingBlueBlackText(
+                AppStrings.extreme,
+                AppStrings.airplaneFlight,
+              )),
           verticalSpace(AppSizes.spaceBtwSections),
           const HomeForm()
         ],

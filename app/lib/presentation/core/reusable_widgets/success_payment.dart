@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../navigation_menu.dart';
 import '../utils/constants/colors.dart';
 import '../utils/constants/images.dart';
 import '../utils/constants/sizes.dart';
@@ -18,7 +20,7 @@ class SuccessPaymentScreen extends StatelessWidget {
         padding: EdgeInsets.all(AppSizes.defaultPadding),
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(),
             Padding(
@@ -28,10 +30,10 @@ class SuccessPaymentScreen extends StatelessWidget {
               child: Column(children: [
                 Image.asset(
                   AppImages.cardTick,
-                  width: AppSizes.imageOnboardingSize,
+                  width: 120,
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Paid',
@@ -41,22 +43,25 @@ class SuccessPaymentScreen extends StatelessWidget {
                     Text(
                       'In case of flight cancellation the money will be refunded',
                       style: AppStyles.font16WhiteRegular,
+                      textAlign: TextAlign.center,
                     ),
-                    verticalSpace(AppSizes.defaultSpace * 2),
                   ],
                 ),
               ]),
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: AppTextButton(
-                buttonText: 'Perfect',
-                textStyle: AppStyles.font16BlueMedium,
-                onPressed: () {},
-                buttonWidth: double.infinity,
-                backgroundColor: AppColors.white,
+            Column(children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: AppTextButton(
+                  buttonText: 'Perfect',
+                  textStyle: AppStyles.font16BlueMedium,
+                  onPressed: () => Get.to(() => const NavigationMenu()),
+                  buttonWidth: double.infinity,
+                  backgroundColor: AppColors.white,
+                ),
               ),
-            ),
+              verticalSpace(AppSizes.defaultSpace * 2),
+            ]),
           ],
         ),
       ),

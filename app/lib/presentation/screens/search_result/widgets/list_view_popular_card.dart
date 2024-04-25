@@ -1,5 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/constants/spacing.dart';
+import '../popular_card_model.dart';
 import 'popular_card.dart';
 
 class ListViewPopularCard extends StatelessWidget {
@@ -15,9 +17,21 @@ class ListViewPopularCard extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
-        itemBuilder: (context, index) => const PopularCard(),
+        itemBuilder: (context, index) => index.isEven
+            ? FadeInUpBig(
+                duration: const Duration(milliseconds: 1000),
+                child: PopularCard(
+                  popularCard: PopularCardModel.popularCards[index],
+                ),
+              )
+            : FadeInDownBig(
+                duration: const Duration(milliseconds: 1000),
+                child: PopularCard(
+                  popularCard: PopularCardModel.popularCards[index],
+                ),
+              ),
         separatorBuilder: (_, __) => horizontalSpace(8),
-        itemCount: 6,
+        itemCount: PopularCardModel.popularCards.length,
       ),
     );
   }

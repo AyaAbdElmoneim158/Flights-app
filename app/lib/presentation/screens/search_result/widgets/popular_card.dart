@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/constants/images.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
+import '../popular_card_model.dart';
 
 class PopularCard extends StatelessWidget {
   const PopularCard({
     super.key,
+    required this.popularCard,
   });
-
+  final PopularCardModel popularCard;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,12 +17,17 @@ class PopularCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            AppImages.helperInfo,
-            width: 118,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: Image.asset(
+              popularCard.image,
+              width: 118,
+              height: 118,
+              fit: BoxFit.cover,
+            ),
           ),
           verticalSpace(AppSizes.spaceBtwItems / 2),
-          const Text("Extreme flight")
+          Text(popularCard.text)
         ],
       ),
     );

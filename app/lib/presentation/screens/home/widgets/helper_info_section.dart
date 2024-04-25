@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/reusable_widgets/heading_text.dart';
@@ -22,7 +23,12 @@ class HelperInfoSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            HeadingText(text: AppStrings.helpfulInformation),
+            FadeInLeftBig(
+              duration: const Duration(milliseconds: 1500),
+              child: HeadingText(
+                text: AppStrings.helpfulInformation,
+              ),
+            ),
             const HelperInfoListView()
           ],
         ),

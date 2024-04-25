@@ -11,14 +11,20 @@ class HelperCardModel {
 
   static List<HelperCardModel> helperCards = [
     HelperCardModel(
-        text: "Why are the airplanes white?", image: AppImages.helperInfo),
+      text: "Why are the airplanes white?",
+      image: AppImages.helperInfo1,
+    ),
     HelperCardModel(
-        text: "5 interesting facts about flying", image: AppImages.helperInfo),
+      text: "5 interesting facts about flying",
+      image: AppImages.helperInfo2,
+    ),
     HelperCardModel(
-        text: "We lose a lot of water during a flight",
-        image: AppImages.helperInfo),
+      text: "We lose a lot of water during a flight",
+      image: AppImages.helperInfo3,
+    ),
     HelperCardModel(
-        text: "Why do pilots on the same flight eat different food?",
-        image: AppImages.helperInfo),
+      text: "Why do pilots on the same flight eat different food?",
+      image: AppImages.helperInfo4,
+    ),
   ];
 }

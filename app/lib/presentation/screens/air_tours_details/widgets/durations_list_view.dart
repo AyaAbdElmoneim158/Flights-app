@@ -8,7 +8,9 @@ import 'info_duration_or_start_flight_widget.dart';
 class DurationsListView extends StatelessWidget {
   const DurationsListView({
     super.key,
+    required this.text,
   });
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class DurationsListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (_, index) => InfoDurationOrStartFlightWidget(
         duration: AppConstants.durations[index],
-        realTime: index == 1 ? true : false,
+        realTime: AppConstants.durations[index] == text ? true : false,
       ),
       separatorBuilder: (_, __) => horizontalSpace(AppSizes.sm),
       itemCount: AppConstants.durations.length,

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/constants/colors.dart';
-import '../../../core/utils/constants/images.dart';
 import '../../../core/utils/constants/sizes.dart';
+import '../../search_result/air_tour_model.dart';
 import '../../search_result/widgets/air_tours_info.dart';
 
 class DetailsImageCard extends StatelessWidget {
   const DetailsImageCard({
     super.key,
+    required this.airTour,
   });
+  final AirTourModel airTour;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +24,10 @@ class DetailsImageCard extends StatelessWidget {
             bottomRight: Radius.circular(AppSizes.lg),
           ),
           child: Image.asset(
-            AppImages.airTour2,
+            airTour.image,
             width: double.infinity,
             height: 250.h,
+            fit: BoxFit.cover,
           ),
         ),
         Padding(
@@ -34,9 +37,9 @@ class DetailsImageCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              buildAirToursInfo("⭐ 4.7"),
-              buildAirToursInfo("Airfield: Selzo"),
-              buildAirToursInfo("Passengers:4"),
+              buildAirToursInfo("⭐ ${airTour.rate}"),
+              buildAirToursInfo("Airfield: ${airTour.airField}"),
+              buildAirToursInfo("Passengers: ${airTour.passengers}"),
             ],
           ),
         ),
@@ -44,14 +47,13 @@ class DetailsImageCard extends StatelessWidget {
           top: AppSizes.sm,
           right: AppSizes.sm,
           child: Stack(
-            alignment: Alignment.topCenter,
+            alignment: Alignment.center,
             children: [
               CircleAvatar(
                 backgroundColor: AppColors.gray25.withOpacity(0.5),
-                radius: 16,
+                radius: 20,
               ),
               IconButton(
-                // padding: EdgeInsets.zero,
                 onPressed: () {},
                 icon: const Icon(
                   Icons.favorite,
@@ -65,7 +67,7 @@ class DetailsImageCard extends StatelessWidget {
           top: AppSizes.sm,
           left: AppSizes.sm,
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(
               Icons.arrow_back,
               color: AppColors.gray25,

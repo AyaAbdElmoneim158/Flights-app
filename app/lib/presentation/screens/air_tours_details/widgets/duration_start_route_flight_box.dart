@@ -11,7 +11,11 @@ import 'start_flight_list_view.dart';
 class DurationStartRouteFlight extends StatelessWidget {
   const DurationStartRouteFlight({
     super.key,
+    required this.flightDuration,
+    required this.flightStart,
   });
+  final String flightDuration;
+  final String flightStart;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +27,10 @@ class DurationStartRouteFlight extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HeadingText(text: AppStrings.flightDuration),
-          const SizedBox(height: 35, child: DurationsListView()),
+          SizedBox(height: 35, child: DurationsListView(text: flightDuration)),
           verticalSpace(AppSizes.spaceBtwSections),
           HeadingText(text: AppStrings.startOfFlight),
-          const SizedBox(height: 35, child: StartFlightListView()),
+          SizedBox(height: 35, child: StartFlightListView(text: flightStart)),
           verticalSpace(AppSizes.spaceBtwSections),
           HeadingText(text: AppStrings.flightRoute),
           //ToDo: Complete Design

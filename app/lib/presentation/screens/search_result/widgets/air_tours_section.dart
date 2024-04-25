@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/reusable_widgets/heading_text.dart';
 import 'package:app/presentation/core/utils/constants/sizes.dart';
 import 'package:app/presentation/core/utils/constants/styles.dart';
@@ -16,10 +17,16 @@ class AirToursSection extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(AppSizes.defaultPadding),
       decoration: AppStyles.containerTopCircularDecoration,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [HeadingText(text: "Air tours"), AirToursListView()],
+        children: [
+          ZoomIn(
+            duration: const Duration(milliseconds: 850),
+            child: const HeadingText(text: "Air tours"),
+          ),
+          const AirToursListView(),
+        ],
       ),
     );
   }
