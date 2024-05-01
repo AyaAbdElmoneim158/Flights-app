@@ -10,6 +10,7 @@ import '../../core/utils/constants/styles.dart';
 import 'sub_screens/customer_service_screen.dart';
 import 'sub_screens/my_tickets_screen.dart';
 import 'sub_screens/notifications_screen.dart';
+import 'sub_screens/settings_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -95,12 +96,11 @@ class PagesCardsSection extends StatelessWidget {
                   bottomLeft: Radius.circular(8),
                   bottomRight: Radius.circular(8),
                 ),
+                onTap: () => Get.to(() => const SettingsScreen()),
               ),
             ]),
             ProfileGrayCard(
-              text: "Logout",
-              image: AppImages.xCircle,
-            ),
+                text: "Logout", image: AppImages.xCircle, onTap: () {}),
           ],
         ),
       ),
