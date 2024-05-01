@@ -7,6 +7,7 @@ import '../../core/utils/constants/images.dart';
 import '../../core/utils/constants/sizes.dart';
 import '../../core/utils/constants/spacing.dart';
 import '../../core/utils/constants/styles.dart';
+import 'sub_screens/customer_service_screen.dart';
 import 'sub_screens/my_tickets_screen.dart';
 import 'sub_screens/notifications_screen.dart';
 
@@ -83,6 +84,7 @@ class PagesCardsSection extends StatelessWidget {
                   topLeft: Radius.circular(8),
                   topRight: Radius.circular(8),
                 ),
+                onTap: () => Get.to(() => const CustomerServiceScreen()),
               ),
               ProfileGrayCard(
                 text: "Settings",

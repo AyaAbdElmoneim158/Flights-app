@@ -11,11 +11,12 @@ dependencies:
   address_search_field: ^5.0.3
   animate_do: ^3.3.4
   connectivity_plus: ^5.0.2
+  country_picker: ^2.0.25
   cupertino_icons: ^1.0.2
+  dash_chat_2: ^0.0.20
   flutter:
     sdk: flutter
   flutter_credit_card: ^4.0.1
-  # flutter_location_search: ^1.1.4
   flutter_native_splash: ^2.3.9
   flutter_screenutil: ^5.9.0
   flutter_secure_storage: ^9.0.0
@@ -29,7 +30,7 @@ dependencies:
   page_transition: ^2.1.0
   rename: ^3.0.1
   search_field_autocomplete: ^1.0.0
-  # syncfusion_flutter_datepicker: ^25.1.40
+  timelines: ^0.1.0
   url_launcher: ^6.2.5
 
 dev_dependencies:
