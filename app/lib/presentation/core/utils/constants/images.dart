@@ -59,4 +59,6 @@ abstract class AppImages {
   static String notification = '$imagesPath/profile/Notification.svg';
   static String receipt = '$imagesPath/profile/Receipt.svg';
   static String xCircle = '$imagesPath/profile/XCircle.svg';
+  static String planCard = '$imagesPath/profile/plan_card.png';
+  static String bar = '$imagesPath/profile/bar.png';
 }

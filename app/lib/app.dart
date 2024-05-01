@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import 'presentation/core/utils/constants/strings.dart';
 import 'presentation/core/utils/theme/theme.dart';
 import 'presentation/screens/profile/profile_screen.dart';
+import 'presentation/screens/profile/sub_screens/My_tickets_details_screen.dart';
+import 'presentation/screens/profile/sub_screens/my_tickets_screen.dart';
 import 'presentation/screens/profile/sub_screens/notifications_screen.dart';
 // import 'presentation/screens/payment/payment_screen.dart';
 // import 'presentation/screens/profile/sub_screens/customer_service_screen.dart';
@@ -28,7 +30,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // initialRoute: Routes.onboarding,
         // onGenerateRoute: AppRouter.onGenerate,
-        home: const ProfileScreen(),
+        home: const MyTicketsDetailsScreen(),
       ),
     );
   }
