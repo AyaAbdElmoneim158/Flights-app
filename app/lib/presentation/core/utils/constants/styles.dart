@@ -103,6 +103,12 @@ abstract class AppStyles {
     color: AppColors.darkGray,
   );
 
+  static TextStyle font12Gray500Regular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.gray500,
+  );
+
   static TextStyle font16Gray800Regular = TextStyle(
     fontSize: 16.sp,
     fontWeight: AppFontWeightHelper.regular,
