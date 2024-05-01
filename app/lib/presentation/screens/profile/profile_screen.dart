@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../../core/utils/constants/colors.dart';
 import '../../core/utils/constants/images.dart';
 import '../../core/utils/constants/sizes.dart';
@@ -11,6 +10,7 @@ import 'sub_screens/customer_service_screen.dart';
 import 'sub_screens/my_tickets_screen.dart';
 import 'sub_screens/notifications_screen.dart';
 import 'sub_screens/settings_screen.dart';
+import 'widgets/logout_by_bottom_sheet.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -100,7 +100,11 @@ class PagesCardsSection extends StatelessWidget {
               ),
             ]),
             ProfileGrayCard(
-                text: "Logout", image: AppImages.xCircle, onTap: () {}),
+                text: "Logout",
+                image: AppImages.xCircle,
+                onTap: () {
+                  logoutByBottomSheet(context);
+                }),
           ],
         ),
       ),
