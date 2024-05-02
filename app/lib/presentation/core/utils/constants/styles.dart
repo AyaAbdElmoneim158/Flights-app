@@ -156,6 +156,18 @@ abstract class AppStyles {
     color: AppColors.gray800,
   );
 
+  static TextStyle font13Primary600Regular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: AppFontWeightHelper.regular,
+    color: AppColors.primary600,
+  );
+
+  static TextStyle font17Gray800Medium = TextStyle(
+    fontSize: 17.sp,
+    fontWeight: AppFontWeightHelper.medium,
+    color: AppColors.gray800,
+  );
+
   static Decoration? bottomNavigationDecoration = const BoxDecoration(
     boxShadow: [
       BoxShadow(

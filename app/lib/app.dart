@@ -1,14 +1,12 @@
 // import 'package:app/presentation/core/utils/routing/router.dart';
 // import 'package:app/presentation/core/utils/routing/routes.dart';
+import 'package:app/presentation/screens/search_result/air_tour_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import 'presentation/core/utils/constants/strings.dart';
 import 'presentation/core/utils/theme/theme.dart';
-import 'presentation/screens/air_tours_details/reviews_screen.dart';
-import 'presentation/screens/auth/phone_number_screen.dart';
-import 'presentation/screens/profile/profile_screen.dart';
+import 'presentation/screens/air_tours_details/air_tours_details.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -26,7 +24,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // initialRoute: Routes.onboarding,
         // onGenerateRoute: AppRouter.onGenerate,
-        home: const ReviewsScreen(),
+        home: AirTourDetails(airTour: AirTourModel.dummyAirTour[0]),
       ),
     );
   }

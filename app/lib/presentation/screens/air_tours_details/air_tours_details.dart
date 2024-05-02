@@ -1,3 +1,4 @@
+import 'package:app/presentation/core/utils/constants/styles.dart';
 import 'package:flutter/material.dart';
 import '../../core/utils/constants/colors.dart';
 import '../../core/utils/constants/sizes.dart';
@@ -32,6 +33,12 @@ class AirTourDetails extends StatelessWidget {
           const PilotInformationSection(),
           verticalSpace(AppSizes.spaceBtwItems),
           const CustomerReviewsSection(),
+          verticalSpace(AppSizes.spaceBtwItems),
+          Text(
+            "By continuing, you agree to the terms of use and\nprivacy policy",
+            style: AppStyles.font13Primary600Regular,
+            textAlign: TextAlign.center,
+          ),
           verticalSpace(AppSizes.spaceBtwItems),
           const BookForBtn(),
           verticalSpace(AppSizes.spaceBtwSections),

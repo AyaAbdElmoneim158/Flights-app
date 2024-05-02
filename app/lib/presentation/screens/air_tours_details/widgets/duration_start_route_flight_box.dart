@@ -32,14 +32,14 @@ class DurationStartRouteFlight extends StatelessWidget {
           HeadingText(text: AppStrings.startOfFlight),
           SizedBox(height: 35, child: StartFlightListView(text: flightStart)),
           verticalSpace(AppSizes.spaceBtwSections),
-          HeadingText(text: AppStrings.flightRoute),
-          //ToDo: Complete Design
-          Text(
-            "Complete",
-            style: AppStyles.font16BlueMedium.copyWith(
-              color: AppColors.error500,
-            ),
-          ),
+          // HeadingText(text: AppStrings.flightRoute),
+          // //ToDo: Complete Design
+          // Text(
+          //   "Complete",
+          //   style: AppStyles.font16BlueMedium.copyWith(
+          //     color: AppColors.error500,
+          //   ),
+          // ),
         ],
       ),
     );
