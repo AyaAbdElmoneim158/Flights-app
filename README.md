@@ -6,5 +6,12 @@
 </div>
 
 
-## 📌About Project
+## About Project
 give users a simple and effective solution to handle their air travel requirements. Trips provides travelers with a one-stop shop to easily plan, book, track, and manage their trips thanks to its user-friendly interface and extensive feature set.
+
+## Demo
+
+## See also
+
+ - [Github repo](https://github.com/AyaAbdElmoneim158/Flights-app)
+ - [Figma design](https://www.figma.com/design/AJaNaBLEkea2iRGFxadQTc/Flights-%E2%80%A2-Free-App-UI-Kit-(Community)-(Copy)?t=afoNa8lIjav3NV0r-0)
