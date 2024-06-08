@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants/spacing.dart';
-import '../helper_card_model.dart';
+import '../models/helper_card_model.dart';
 import 'helper_info_image_card.dart';
 
 class HelperInfoListView extends StatelessWidget {

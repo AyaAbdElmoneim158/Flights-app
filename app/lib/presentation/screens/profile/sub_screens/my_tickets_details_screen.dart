@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,74 +22,77 @@ class MyTicketsDetailsScreen extends StatelessWidget {
           style: AppStyles.font16Gray800Medium,
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(AppSizes.defaultPadding),
-        child: SingleChildScrollView(
-          child: Stack(
-            alignment: Alignment.topCenter,
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                padding: EdgeInsets.all(AppSizes.xl),
-                decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xff101828).withOpacity(0.2),
-                        offset: const Offset(0, 32),
-                        spreadRadius: 0,
-                        blurRadius: 64,
+      body: ZoomIn(
+        duration: const Duration(milliseconds: 750),
+        child: Padding(
+          padding: EdgeInsets.all(AppSizes.defaultPadding),
+          child: SingleChildScrollView(
+            child: Stack(
+              alignment: Alignment.topCenter,
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(AppSizes.xl),
+                  decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xff101828).withOpacity(0.2),
+                          offset: const Offset(0, 32),
+                          spreadRadius: 0,
+                          blurRadius: 64,
+                        ),
+                      ]),
+                  child: Column(
+                    children: [
+                      Image.asset(AppImages.planCard),
+                      Text(
+                        "Cessna 172 familiarization flight from Kronstadt",
+                        style: AppStyles.font14Gray800Medium,
                       ),
-                    ]),
-                child: Column(
-                  children: [
-                    Image.asset(AppImages.planCard),
-                    Text(
-                      "Cessna 172 familiarization flight from Kronstadt",
-                      style: AppStyles.font14Gray800Medium,
-                    ),
-                    const Divider(color: AppColors.gray100),
-                    verticalSpace(AppSizes.md),
-                    const GridSection(),
-                    const Divider(color: AppColors.gray100),
-                    verticalSpace(AppSizes.md),
-                    Image.asset(AppImages.bar),
-                    verticalSpace(AppSizes.sm),
-                    Text(
-                      "673-843",
-                      style: AppStyles.font12Gray800Regular,
-                    ),
-                  ],
+                      const Divider(color: AppColors.gray100),
+                      verticalSpace(AppSizes.md),
+                      const GridSection(),
+                      const Divider(color: AppColors.gray100),
+                      verticalSpace(AppSizes.md),
+                      Image.asset(AppImages.bar),
+                      verticalSpace(AppSizes.sm),
+                      Text(
+                        "673-843",
+                        style: AppStyles.font12Gray800Regular,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Positioned(
-                top: -16.h,
-                child: AppTextButton(
-                  buttonText: "2000 ₽",
-                  textStyle: AppStyles.font18WhiteMedium,
-                  onPressed: () {},
-                  borderRadius: 50.w,
-                  buttonHeight: 32.h,
+                Positioned(
+                  top: -16.h,
+                  child: AppTextButton(
+                    buttonText: "2000 ₽",
+                    textStyle: AppStyles.font18WhiteMedium,
+                    onPressed: () {},
+                    borderRadius: 50.w,
+                    buttonHeight: 32.h,
+                  ),
                 ),
-              ),
-              Positioned(
-                left: -16,
-                bottom: 124.h,
-                child: const CircleAvatar(
-                  radius: 16,
-                  backgroundColor: AppColors.backgroundColor,
+                Positioned(
+                  left: -16,
+                  bottom: 124.h,
+                  child: const CircleAvatar(
+                    radius: 16,
+                    backgroundColor: AppColors.backgroundColor,
+                  ),
                 ),
-              ),
-              Positioned(
-                right: -16,
-                bottom: 124.h,
-                child: const CircleAvatar(
-                  radius: 16,
-                  backgroundColor: AppColors.backgroundColor,
+                Positioned(
+                  right: -16,
+                  bottom: 124.h,
+                  child: const CircleAvatar(
+                    radius: 16,
+                    backgroundColor: AppColors.backgroundColor,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

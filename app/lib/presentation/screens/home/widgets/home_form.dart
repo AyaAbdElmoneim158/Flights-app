@@ -9,8 +9,8 @@ import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
 import '../../../core/utils/constants/strings.dart';
 import '../../../core/utils/constants/styles.dart';
+import 'build_minus_and_plus_gray_container.dart';
 import 'search_bottom_sheet.dart';
-// import 'package:flutter_location_search/flutter_location_search.dart';
 
 class HomeForm extends StatefulWidget {
   const HomeForm({
@@ -29,36 +29,13 @@ class _HomeFormState extends State<HomeForm> {
     return Form(
       child: Column(
         children: [
+          ///* whereToFind....Field - - - - - - - - - - - - - - - - - -
           ZoomIn(
             duration: const Duration(milliseconds: 700),
             child: GestureDetector(
               onTap: () async {
                 debugPrint("OnTap: showMaterialModalBottomSheet");
                 openSearchBottomSheet();
-
-/*
- LocationSearch(
-            onSelected: (place) {
-              // Handle the selected location
-              print('Selected Location: ${place.displayName}');
-            },
-          ),
- */
-                // LocationData? locationData = await LocationSearch.show(
-                //   context: context,
-                //   lightAdress: true,
-                //   mode: Mode.fullscreen,
-                //   searchBarTextColor: AppColors.accent,
-                //   searchBarBackgroundColor: AppColors.white,
-                //   searchBarHintColor: AppColors.gray400,
-                //   searchBarHintText: AppStrings.whereToFind,
-                //   iconColor: AppColors.primary,
-                //   currentPositionButtonText: AppStrings.myLocation,
-                // );
-
-                // setState(() {
-                //   _locationText = locationData!.address;
-                // });
               },
               child: Container(
                 decoration: AppStyles.textFieldShadow,
@@ -73,7 +50,7 @@ class _HomeFormState extends State<HomeForm> {
                   ),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.mapPin,
                       height: AppSizes.iconXs,
@@ -84,6 +61,8 @@ class _HomeFormState extends State<HomeForm> {
               ),
             ),
           ),
+
+          ///* sundayJuly30....Field - - - - - - - - - - - - - - - - - -
           ZoomIn(
             duration: const Duration(milliseconds: 900),
             child: GestureDetector(
@@ -103,7 +82,7 @@ class _HomeFormState extends State<HomeForm> {
                   ),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.calendarBlank,
                       height: AppSizes.iconXs,
@@ -116,6 +95,8 @@ class _HomeFormState extends State<HomeForm> {
             ),
           ),
           verticalSpace(AppSizes.spaceBtwInputFields),
+
+          ///* passengers....Field - - - - - - - - - - - - - - - - - -
           ZoomIn(
             duration: const Duration(milliseconds: 1100),
             child: GestureDetector(
@@ -129,7 +110,7 @@ class _HomeFormState extends State<HomeForm> {
                   contentPadding: EdgeInsets.all(24.w),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.smileyWink,
                       height: AppSizes.iconXs,
@@ -140,14 +121,14 @@ class _HomeFormState extends State<HomeForm> {
                   suffixIcon: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      buildGrayContainer(AppImages.minus),
+                      buildMinusAndPlusGrayContainer(AppImages.minus),
                       horizontalSpace(AppSizes.md),
                       Text(
                         "1",
                         style: AppStyles.font24Gray800Medium,
                       ),
                       horizontalSpace(AppSizes.md),
-                      buildGrayContainer(AppImages.plus),
+                      buildMinusAndPlusGrayContainer(AppImages.plus),
                       horizontalSpace(AppSizes.md),
                     ],
                   ),
@@ -156,6 +137,8 @@ class _HomeFormState extends State<HomeForm> {
             ),
           ),
           verticalSpace(AppSizes.spaceBtwInputFields),
+
+          ///* findTour....Btn - - - - - - - - - - - - - - - - - -
           ZoomIn(
             duration: const Duration(milliseconds: 1300),
             child: AppTextButton(
@@ -175,20 +158,4 @@ class _HomeFormState extends State<HomeForm> {
       ),
     );
   }
-}
-
-Container buildGrayContainer(String asset) {
-  return Container(
-    width: 28,
-    height: 28,
-    padding: const EdgeInsets.all(6),
-    decoration: BoxDecoration(
-      color: AppColors.backgroundColor,
-      borderRadius: BorderRadius.circular(4),
-    ),
-    child: Image.asset(
-      asset,
-      height: AppSizes.iconXs,
-    ),
-  );
 }

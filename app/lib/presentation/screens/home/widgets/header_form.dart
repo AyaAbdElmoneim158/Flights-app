@@ -25,11 +25,12 @@ class HeaderForm extends StatelessWidget {
         children: [
           verticalSpace(topPadding),
           ZoomIn(
-              duration: const Duration(milliseconds: 500),
-              child: buildHeadingBlueBlackText(
-                AppStrings.extreme,
-                AppStrings.airplaneFlight,
-              )),
+            duration: const Duration(milliseconds: 500),
+            child: buildHeadingBlueBlackText(
+              AppStrings.extreme,
+              AppStrings.airplaneFlight,
+            ),
+          ),
           verticalSpace(AppSizes.spaceBtwSections),
           const HomeForm()
         ],

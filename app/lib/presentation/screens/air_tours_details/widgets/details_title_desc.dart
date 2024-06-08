@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
 import '../../../core/utils/constants/styles.dart';
-import '../../search_result/air_tour_model.dart';
+import '../../search_result/models/air_tour_model.dart';
 
 class DetailsTitleDesc extends StatelessWidget {
   const DetailsTitleDesc({

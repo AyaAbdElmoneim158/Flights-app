@@ -1,7 +1,6 @@
 import 'package:app/presentation/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import '../../../core/reusable_widgets/heading_text.dart';
-import '../../../core/utils/constants/colors.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
 import '../../../core/utils/constants/styles.dart';

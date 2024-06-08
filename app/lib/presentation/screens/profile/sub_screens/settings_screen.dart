@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,31 +26,40 @@ class SettingsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ProfileGrayCard(
-                text: "Application language",
-                image: AppImages.globeHemisphereWest,
-                rightWidget: Text(
-                  "English",
-                  style: AppStyles.font15DarkGrayRegular,
+              FadeInLeftBig(
+                duration: const Duration(milliseconds: 750),
+                child: ProfileGrayCard(
+                  text: "Application language",
+                  image: AppImages.globeHemisphereWest,
+                  rightWidget: Text(
+                    "English",
+                    style: AppStyles.font15DarkGrayRegular,
+                  ),
                 ),
               ),
               verticalSpace(AppSizes.spaceBtwItems),
-              ProfileGrayCard(
-                text: "Push notifications",
-                image: AppImages.notification,
-                rightWidget: Switch(
-                  value: true,
-                  onChanged: (val) {},
-                  activeColor: AppColors.white,
-                  activeTrackColor: AppColors.primary,
-                  inactiveThumbColor: AppColors.white,
-                  inactiveTrackColor: AppColors.gray100,
+              FadeInRightBig(
+                duration: const Duration(milliseconds: 750),
+                child: ProfileGrayCard(
+                  text: "Push notifications",
+                  image: AppImages.notification,
+                  rightWidget: Switch(
+                    value: true,
+                    onChanged: (val) {},
+                    activeColor: AppColors.white,
+                    activeTrackColor: AppColors.primary,
+                    inactiveThumbColor: AppColors.white,
+                    inactiveTrackColor: AppColors.gray100,
+                  ),
                 ),
               ),
               verticalSpace(AppSizes.spaceBtwItems),
-              ProfileGrayCard(
-                text: "About us",
-                image: AppImages.airplaneFill,
+              FadeInLeftBig(
+                duration: const Duration(milliseconds: 750),
+                child: ProfileGrayCard(
+                  text: "About us",
+                  image: AppImages.airplaneFill,
+                ),
               ),
             ],
           ),

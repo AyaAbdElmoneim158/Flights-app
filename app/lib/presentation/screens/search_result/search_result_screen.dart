@@ -13,11 +13,13 @@ class SearchResultScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
-        child: Column(children: [
-          const PopularSection(),
-          verticalSpace(AppSizes.spaceBtwSections),
-          const AirToursSection(),
-        ]),
+        child: Column(
+          children: [
+            const PopularSection(),
+            verticalSpace(AppSizes.spaceBtwSections),
+            const AirToursSection(),
+          ],
+        ),
       ),
     );
   }

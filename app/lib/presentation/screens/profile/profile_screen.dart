@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -46,65 +47,83 @@ class PagesCardsSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ProfileGrayCard(
-              text: "Notifications",
-              image: AppImages.bellSimple,
-              onTap: () => Get.to(() => const NotificationsScreen()),
+            FadeInLeftBig(
+              duration: const Duration(milliseconds: 500),
+              child: ProfileGrayCard(
+                text: "Notifications",
+                image: AppImages.bellSimple,
+                onTap: () => Get.to(() => const NotificationsScreen()),
+              ),
             ),
             Column(children: [
-              ProfileGrayCard(
-                text: "My tickets",
-                image: AppImages.creditCard,
-                cardBorderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(0),
-                  bottomRight: Radius.circular(0),
-                  topLeft: Radius.circular(8),
-                  topRight: Radius.circular(8),
+              FadeInRightBig(
+                duration: const Duration(milliseconds: 500),
+                child: ProfileGrayCard(
+                  text: "My tickets",
+                  image: AppImages.creditCard,
+                  cardBorderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(0),
+                    bottomRight: Radius.circular(0),
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
+                  ),
+                  onTap: () => Get.to(() => const MyTicketsScreen()),
                 ),
-                onTap: () => Get.to(() => const MyTicketsScreen()),
               ),
-              ProfileGrayCard(
-                text: "My cards",
-                image: AppImages.notification,
-                cardBorderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
-                  topLeft: Radius.circular(0),
-                  topRight: Radius.circular(0),
+              FadeInLeftBig(
+                duration: const Duration(milliseconds: 500),
+                child: ProfileGrayCard(
+                  text: "My cards",
+                  image: AppImages.notification,
+                  cardBorderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(0),
+                  ),
+                  // rightWidget: Text("Right"),
                 ),
-                // rightWidget: Text("Right"),
               ),
             ]),
             Column(children: [
-              ProfileGrayCard(
-                text: "Customer Service",
-                image: AppImages.chatCenteredDots,
-                cardBorderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(0),
-                  bottomRight: Radius.circular(0),
-                  topLeft: Radius.circular(8),
-                  topRight: Radius.circular(8),
+              FadeInRightBig(
+                duration: const Duration(milliseconds: 500),
+                child: ProfileGrayCard(
+                  text: "Customer Service",
+                  image: AppImages.chatCenteredDots,
+                  cardBorderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(0),
+                    bottomRight: Radius.circular(0),
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
+                  ),
+                  onTap: () => Get.to(() => const CustomerServiceScreen()),
                 ),
-                onTap: () => Get.to(() => const CustomerServiceScreen()),
               ),
-              ProfileGrayCard(
-                text: "Settings",
-                image: AppImages.gearSix,
-                cardBorderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(0),
-                  topRight: Radius.circular(0),
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
+              FadeInLeftBig(
+                duration: const Duration(milliseconds: 500),
+                child: ProfileGrayCard(
+                  text: "Settings",
+                  image: AppImages.gearSix,
+                  cardBorderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(0),
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                  ),
+                  onTap: () => Get.to(() => const SettingsScreen()),
                 ),
-                onTap: () => Get.to(() => const SettingsScreen()),
               ),
             ]),
-            ProfileGrayCard(
-                text: "Logout",
-                image: AppImages.xCircle,
-                onTap: () {
-                  logoutByBottomSheet(context);
-                }),
+            FadeInRightBig(
+              duration: const Duration(milliseconds: 500),
+              child: ProfileGrayCard(
+                  text: "Logout",
+                  image: AppImages.xCircle,
+                  onTap: () {
+                    logoutByBottomSheet(context);
+                  }),
+            ),
           ],
         ),
       ),
@@ -119,53 +138,56 @@ class UserInfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(AppSizes.defaultPadding),
-      decoration: AppStyles.containerBottomCircularDecoration,
-      child: Column(
-        children: [
-          verticalSpace(AppSizes.appBarHeight),
-          Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              CircleAvatar(
-                radius: 75,
-                backgroundImage: AssetImage(AppImages.david),
-              ),
-              Positioned(
-                // right: AppSizes.lg,
-                // top: AppSizes.lg * 2,
-                child: Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: AppColors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xff475159).withOpacity(0.15),
-                        spreadRadius: 0,
-                        blurRadius: 20,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: const Icon(Icons.edit),
+    return ZoomIn(
+      duration: const Duration(milliseconds: 500),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(AppSizes.defaultPadding),
+        decoration: AppStyles.containerBottomCircularDecoration,
+        child: Column(
+          children: [
+            verticalSpace(AppSizes.appBarHeight),
+            Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                CircleAvatar(
+                  radius: 75,
+                  backgroundImage: AssetImage(AppImages.david),
                 ),
-              )
-            ],
-          ),
-          Text(
-            "David J",
-            style: AppStyles.font24Gray800SemiBold,
-          ),
-          Text(
-            "+1 555 555 55 55",
-            style: AppStyles.font14Gray500Medium,
-          ),
-          verticalSpace(AppSizes.spaceBtwSections),
-        ],
+                Positioned(
+                  // right: AppSizes.lg,
+                  // top: AppSizes.lg * 2,
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: AppColors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xff475159).withOpacity(0.15),
+                          spreadRadius: 0,
+                          blurRadius: 20,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: const Icon(Icons.edit),
+                  ),
+                )
+              ],
+            ),
+            Text(
+              "David J",
+              style: AppStyles.font24Gray800SemiBold,
+            ),
+            Text(
+              "+1 555 555 55 55",
+              style: AppStyles.font14Gray500Medium,
+            ),
+            verticalSpace(AppSizes.spaceBtwSections),
+          ],
+        ),
       ),
     );
   }

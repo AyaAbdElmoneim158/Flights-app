@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/reusable_widgets/app_text_field.dart';
 import '../../../core/reusable_widgets/heading_text.dart';
 import '../../../core/utils/constants/images.dart';
@@ -8,7 +7,7 @@ import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
 import '../../../core/utils/constants/strings.dart';
 import '../../../core/utils/constants/styles.dart';
-import '../../home/widgets/home_form.dart';
+import '../../home/widgets/build_minus_and_plus_gray_container.dart';
 
 class TypeSection extends StatelessWidget {
   const TypeSection({
@@ -38,7 +37,7 @@ class TypeSection extends StatelessWidget {
               ),
               enabled: false,
               prefixIcon: Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   AppImages.mapPin,
                   height: AppSizes.iconXs,
@@ -53,7 +52,7 @@ class TypeSection extends StatelessWidget {
               contentPadding: EdgeInsets.all(24.w),
               enabled: false,
               prefixIcon: Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   AppImages.smileyWink,
                   height: AppSizes.iconXs,
@@ -64,11 +63,11 @@ class TypeSection extends StatelessWidget {
               suffixIcon: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  buildGrayContainer(AppImages.minus),
+                  buildMinusAndPlusGrayContainer(AppImages.minus),
                   horizontalSpace(AppSizes.md),
                   Text("1", style: AppStyles.font24Gray800Medium),
                   horizontalSpace(AppSizes.md),
-                  buildGrayContainer(AppImages.plus),
+                  buildMinusAndPlusGrayContainer(AppImages.plus),
                   horizontalSpace(AppSizes.md),
                 ],
               ),

@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,11 +27,18 @@ class NotificationsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const NotifiesToday(),
+              ZoomIn(
+                duration: const Duration(milliseconds: 500),
+                child: const NotifiesToday(),
+              ),
               verticalSpace(AppSizes.xl),
-              const NotifiesNovember162021(),
+              ZoomIn(
+                  duration: const Duration(milliseconds: 750),
+                  child: const NotifiesNovember162021()),
               verticalSpace(AppSizes.xl),
-              const NotifiesNovember142021(),
+              ZoomIn(
+                  duration: const Duration(milliseconds: 1000),
+                  child: const NotifiesNovember142021()),
             ],
           ),
         ),

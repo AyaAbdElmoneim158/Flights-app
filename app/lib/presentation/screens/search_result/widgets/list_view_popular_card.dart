@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/constants/spacing.dart';
-import '../popular_card_model.dart';
+import '../models/popular_card_model.dart';
 import 'popular_card.dart';
 
 class ListViewPopularCard extends StatelessWidget {

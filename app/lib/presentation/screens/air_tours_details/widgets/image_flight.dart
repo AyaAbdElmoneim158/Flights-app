@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants/styles.dart';
-import '../../search_result/air_tour_model.dart';
+import '../../search_result/models/air_tour_model.dart';
 import 'details_image_card.dart';
 import 'details_title_desc.dart';
 

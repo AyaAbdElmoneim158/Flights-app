@@ -35,7 +35,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 ),
               ),
               verticalSpace(AppSizes.spaceBtwSections),
-
               SizedBox(
                 height: 35.h,
                 child: ListView(
@@ -55,7 +54,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 ),
               ),
               verticalSpace(AppSizes.spaceBtwSections),
-              // List
               isAirTours
                   ? const AirToursListView()
                   : const AirToursListView(isFlightCard: true)

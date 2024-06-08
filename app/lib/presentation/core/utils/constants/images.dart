@@ -43,6 +43,7 @@ abstract class AppImages {
   static String popular1 = '$imagesPath/home/popular_1.png';
   static String popular2 = '$imagesPath/home/popular_2.png';
   static String popular3 = '$imagesPath/home/popular_3.png';
+  static String filter = '$imagesPath/home/sliders_horizontal.svg';
 
   ///* Profile - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   static String david = '$imagesPath/profile/david.png';

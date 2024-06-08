@@ -4,7 +4,8 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 environment:
-  sdk: ">=3.2.6 <4.0.0"
+  sdk: ">=3.3.4 <4.0.0"
+  # ">=3.2.6 <4.0.0"
 
 # Packages - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 dependencies:
@@ -14,6 +15,7 @@ dependencies:
   country_picker: ^2.0.25
   cupertino_icons: ^1.0.2
   dash_chat_2: ^0.0.20
+  easy_stepper: ^0.8.3
   flutter:
     sdk: flutter
   flutter_credit_card: ^4.0.1
@@ -32,6 +34,7 @@ dependencies:
   search_field_autocomplete: ^1.0.0
   timelines: ^0.1.0
   url_launcher: ^6.2.5
+  web: 0.5.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

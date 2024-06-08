@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/spacing.dart';
-import '../popular_card_model.dart';
+import '../models/popular_card_model.dart';
 
 class PopularCard extends StatelessWidget {
   const PopularCard({

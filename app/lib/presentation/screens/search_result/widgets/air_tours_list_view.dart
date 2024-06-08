@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:app/presentation/screens/search_result/air_tour_model.dart';
+import 'package:app/presentation/screens/search_result/models/air_tour_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants/colors.dart';

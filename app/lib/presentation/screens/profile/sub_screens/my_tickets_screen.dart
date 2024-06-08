@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:app/presentation/core/reusable_widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,8 +26,11 @@ class MyTicketsScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(AppSizes.defaultPadding),
         child: SingleChildScrollView(
-          child: TodayTicketsSection(
-            onTap: () => Get.to(() => const MyTicketsDetailsScreen()),
+          child: ZoomIn(
+            duration: const Duration(milliseconds: 500),
+            child: TodayTicketsSection(
+              onTap: () => Get.to(() => const MyTicketsDetailsScreen()),
+            ),
           ),
         ),
       ),

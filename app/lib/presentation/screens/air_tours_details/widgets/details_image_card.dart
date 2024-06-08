@@ -1,10 +1,10 @@
+import 'package:app/presentation/screens/search_result/widgets/favorite_icon.dart';
+import 'package:app/presentation/screens/search_result/widgets/row_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/utils/constants/colors.dart';
 import '../../../core/utils/constants/sizes.dart';
-import '../../search_result/air_tour_model.dart';
-import '../../search_result/widgets/air_tours_info.dart';
+import '../../search_result/models/air_tour_model.dart';
 
 class DetailsImageCard extends StatelessWidget {
   const DetailsImageCard({
@@ -18,50 +18,22 @@ class DetailsImageCard extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomLeft,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(AppSizes.lg),
-            bottomRight: Radius.circular(AppSizes.lg),
-          ),
-          child: Image.asset(
-            airTour.image,
-            width: double.infinity,
-            height: 250.h,
-            fit: BoxFit.cover,
-          ),
+        Image.asset(
+          airTour.image,
+          width: double.infinity,
+          height: 250.h,
+          fit: BoxFit.cover,
         ),
         Padding(
-          padding: EdgeInsets.only(
-            bottom: AppSizes.lg,
-            left: AppSizes.lg,
-          ),
-          child: Row(
-            children: [
-              buildAirToursInfo("⭐ ${airTour.rate}"),
-              buildAirToursInfo("Airfield: ${airTour.airField}"),
-              buildAirToursInfo("Passengers: ${airTour.passengers}"),
-            ],
-          ),
-        ),
+            padding: EdgeInsets.only(
+              bottom: AppSizes.lg,
+              left: AppSizes.lg,
+            ),
+            child: RowInfo(airTour: airTour)),
         Positioned(
           top: AppSizes.sm,
           right: AppSizes.sm,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                backgroundColor: AppColors.gray25.withOpacity(0.5),
-                radius: 20,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.favorite,
-                  color: AppColors.gray25,
-                ),
-              ),
-            ],
-          ),
+          child: const FavoriteIcon(),
         ),
         Positioned(
           top: AppSizes.sm,

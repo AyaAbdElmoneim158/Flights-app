@@ -10,6 +10,7 @@ import '../../../core/reusable_widgets/app_text_field.dart';
 import '../../../core/utils/constants/images.dart';
 import '../../../core/utils/constants/sizes.dart';
 import '../../../core/utils/constants/strings.dart';
+import 'city_location.dart';
 import 'date_picker_bottom_sheet.dart';
 
 void openSearchBottomSheet() {
@@ -107,8 +108,6 @@ class _SearchedBoxState extends State<SearchedBox> {
                 style: AppStyles.font14AccentMedium,
               ),
             ]),
-            // verticalSpace(AppSizes.spaceBtwItems / 2),
-            // const Divider(),
             verticalSpace(AppSizes.spaceBtwSections),
 
             ///* Location-list - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -121,21 +120,6 @@ class _SearchedBoxState extends State<SearchedBox> {
                   verticalSpace(AppSizes.spaceBtwSections),
               itemCount: cities.length,
             ),
-
-            ///* Next - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            /*AppTextButton(
-              buttonText: "Next",
-              textStyle: AppStyles.font16BlueMedium.copyWith(
-                color: AppColors.white,
-              ),
-              onPressed: () {
-                Get.back();
-                debugPrint("OnTap: AppTextButton!");
-                openDatePickerBottomSheet();
-              },
-              buttonWidth: double.infinity,
-              backgroundColor: AppColors.primary,
-            ),*/
           ],
         ),
       ),
@@ -143,38 +127,5 @@ class _SearchedBoxState extends State<SearchedBox> {
   }
 }
 
-class CityLocation extends StatelessWidget {
-  const CityLocation({
-    super.key,
-    required this.cityName,
-  });
-  final String cityName;
 
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.pop(context);
-        openDatePickerBottomSheet();
-      },
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            AppImages.mapPin,
-            height: AppSizes.iconMd,
-          ),
-          horizontalSpace(AppSizes.sm),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(cityName, style: AppStyles.font16Gray800Regular),
-              Text("Russia", style: AppStyles.font14Gray400Regular),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
 //! https://stackoverflow.com/questions/75865463/flutter-how-to-create-a-search-bar-using-a-text-field-widget

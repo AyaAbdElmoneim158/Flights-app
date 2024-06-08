@@ -50,7 +50,7 @@ class _FlightsFormState extends State<FlightsForm> {
                           ),
                           enabled: false,
                           prefixIcon: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
                               AppImages.mapPin,
                               height: AppSizes.iconXs,
@@ -80,7 +80,7 @@ class _FlightsFormState extends State<FlightsForm> {
                           ),
                           enabled: false,
                           prefixIcon: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
                               AppImages.mapPin,
                               height: AppSizes.iconXs,
@@ -135,7 +135,7 @@ class _FlightsFormState extends State<FlightsForm> {
                   contentPadding: EdgeInsets.all(24.w),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.calendarBlank,
                       height: AppSizes.iconXs,
@@ -162,7 +162,7 @@ class _FlightsFormState extends State<FlightsForm> {
                   contentPadding: EdgeInsets.all(24.w),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.calendarBlank,
                       height: AppSizes.iconXs,
@@ -189,7 +189,7 @@ class _FlightsFormState extends State<FlightsForm> {
                   contentPadding: EdgeInsets.all(24.w),
                   enabled: false,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       AppImages.smileyWink,
                       height: AppSizes.iconXs,

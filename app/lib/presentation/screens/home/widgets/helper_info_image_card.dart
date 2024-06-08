@@ -1,7 +1,7 @@
 import 'package:app/presentation/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/constants/styles.dart';
-import '../helper_card_model.dart';
+import '../models/helper_card_model.dart';
 
 class HelperInfoImageCard extends StatelessWidget {
   const HelperInfoImageCard({

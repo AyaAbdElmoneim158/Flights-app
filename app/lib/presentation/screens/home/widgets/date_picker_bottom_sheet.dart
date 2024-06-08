@@ -38,6 +38,8 @@ void openDatePickerBottomSheet() {
                     buttonWidth: double.infinity,
                     backgroundColor: AppColors.primary,
                   ),
+
+                  /// ToDo: add SfDateRangePicker
                   // SfDateRangePicker(
                   //   enableMultiView: true,
                   //   viewSpacing: 20,
